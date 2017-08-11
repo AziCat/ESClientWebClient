@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="cn.sinobest.*" />
+    <!-- 本地配置文件加载类 -->
+ 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>	<!-- 是否忽略不可解析的 Placeholder -->
+        <property name="ignoreResourceNotFound" value="true"/>	<!-- 是否忽略找不到的配置文件 -->
+        <property name="locations">		<!-- 本地配置文件路径 -->
+            <list>
+                <value>classpath*:/*.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!-- 大对象处理器  -->
+	<bean id="defLobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler" />
+     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="maxActive" value="20"/>
+        <!-- 8小时问题 End -->
+	</bean>
+    <bean id="simpleQueryJdbcService" class="cn.sinobest.dzzw.ga.framework.query.core.engine.jdbc.JdbcService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="lobHandler" ref="defLobHandler" />
+	</bean>
+
+</beans>
