@@ -8,13 +8,9 @@
      		http://www.springframework.org/schema/task/spring-task-3.0.xsd"
 >
 
-	<!--<context:component-scan base-package="cn.sinobest.timertask" />-->
-	<!-- <task:executor id="executor" pool-size="5" />
-	<task:scheduler id="scheduler" pool-size="10" />  -->
 	<!-- <task:scheduled-tasks>
-	 	&lt;!&ndash; 每20秒执行 &ndash;&gt;
-        <task:scheduled ref="EsTimerTask" method="execute" cron="0/20 * * * * ?"/>
+	 	&lt;!&ndash; 每30秒执行 &ndash;&gt;
+        <task:scheduled ref="EsTimerTask" method="execute" cron="0/30 * * * * ?"/>
 	</task:scheduled-tasks>-->
-	<!-- <task:annotation-driven executor="executor" scheduler="scheduler" /> -->
 
 </beans>

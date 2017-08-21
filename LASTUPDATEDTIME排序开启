@@ -1,0 +1,52 @@
+PUT /aj/_mapping/b_asj_aj
+{
+   "properties": {
+      "LASTUPDATEDTIME": {
+         "type": "text",
+         "fielddata": true
+      }
+   }
+}
+
+PUT /ry/_mapping/b_asj_xyrdj
+{
+   "properties": {
+      "LASTUPDATEDTIME": {
+         "type": "text",
+         "fielddata": true
+      }
+   }
+}
+
+PUT /wp/_mapping/b_asj_wp
+{
+   "properties": {
+      "LASTUPDATEDTIME": {
+         "type": "text",
+         "fielddata": true
+      }
+   }
+}
+
+PUT /dw/_mapping/b_dw
+{
+   "properties": {
+      "LASTUPDATEDTIME": {
+         "type": "text",
+         "fielddata": true
+      }
+   }
+}
+
+PUT /jq/_mapping/b_asj_jq
+{
+   "properties": {
+      "LASTUPDATEDTIME": {
+         "type": "text",
+         "fielddata": true
+      }
+   }
+}
+
+
+

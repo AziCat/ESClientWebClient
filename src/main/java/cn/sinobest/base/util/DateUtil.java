@@ -1,11 +1,11 @@
 package cn.sinobest.base.util;
 
+import cn.sinobest.dzzw.ga.framework.query.core.engine.jdbc.JdbcService;
+
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * 时间相关操作工具类
@@ -58,6 +58,20 @@ public class DateUtil {
 		if(null != date && null != format &&  !"".equals(format)){
 			SimpleDateFormat sdf = new SimpleDateFormat(format);
 			return sdf.format(date);
+		}
+		return null;
+	}
+
+	/**
+	 * 获取数据库当前时间
+	 * @param jdbcService jdbc服务实例
+	 * @return 数据库当前时间
+	 */
+	public static Timestamp getDBCurrentTime(JdbcService jdbcService){
+		String sql = "SELECT SYSDATE AS TIME FROM DUAL";
+		if(null != jdbcService){
+			Map result = jdbcService.queryForSingle(sql,new Object[]{},new int[]{});
+			return (Timestamp) result.get("TIME");
 		}
 		return null;
 	}

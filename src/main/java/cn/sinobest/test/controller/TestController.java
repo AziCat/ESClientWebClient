@@ -14,8 +14,8 @@ public class TestController {
 
     @RequestMapping("/test.action")
 	public void test(Model model){
-        //testService.test();
-        System.out.println("123123123");
+        testService.test();
+        //System.out.println("123123123");
     }
     @RequestMapping("/fulldose.action")
     public void fulldose(Model model){
