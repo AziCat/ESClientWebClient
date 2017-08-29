@@ -9,5 +9,5 @@ import cn.sinobest.simplequery.domain.SimpleParam;
  * @date 2017.08.15
  */
 public interface ISimpleQueryService {
-    ResultDto getQueryResult(SimpleParam simpleParam) throws Exception;
+    ResultDto getQueryResult(SimpleParam simpleParam,String flag) throws Exception;
 }

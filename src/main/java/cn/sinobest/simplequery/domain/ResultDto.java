@@ -6,9 +6,19 @@ import java.util.List;
 public class ResultDto {
     private String successful;
     private String msg;
+    private String took;
     private long total;
     private float max_score;
     private List<Source> sources;
+
+
+    public String getTook() {
+        return took;
+    }
+
+    public void setTook(String took) {
+        this.took = took;
+    }
 
     public String getSuccessful() {
         return successful;

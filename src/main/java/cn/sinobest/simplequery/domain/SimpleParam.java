@@ -1,9 +1,12 @@
 package cn.sinobest.simplequery.domain;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 通用查询实体
+ * @author yjh
+ */
 public class SimpleParam {
     private String userid;
     private String deptCode;
@@ -26,25 +29,6 @@ public class SimpleParam {
 
     public void setHighLight(String highLight) {
         this.highLight = highLight;
-    }
-
-    @Override
-    public String toString() {
-        return "SimpleParam{" +
-                "userid='" + userid + '\'' +
-                ", deptCode='" + deptCode + '\'' +
-                ", queryStr='" + queryStr + '\'' +
-                ", queryType='" + queryType + '\'' +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
-                ", index='" + index + '\'' +
-                ", type='" + type + '\'' +
-                ", from=" + from +
-                ", size=" + size +
-                ", order='" + order + '\'' +
-                ", orderType='" + orderType + '\'' +
-                ", field='" + field + '\'' +
-                '}';
     }
 
     public String getUserid() {

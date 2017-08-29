@@ -46,12 +46,11 @@ public class JsonUtil {
     /**
      * 对象转json字符
      *
-     * @param obj
-     * @return
+     * @param obj 对象
+     * @return 对象的json字符串
      */
     public static String bean2Json(Object obj) {
         Gson gson = new Gson();
-        String jsonStr = gson.toJson(obj);
-        return jsonStr;
+        return gson.toJson(obj);
     }
 }
